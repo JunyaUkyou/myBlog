@@ -66,7 +66,9 @@
     if (this.post?.content) {
       try {
         // BASE_URLを取得
-        const basePath = import.meta.env.BASE_URL || '/';
+        const basePath = import.meta.env.BASE_URL ;
+        console.log({basePath})
+        console.log(`${basePath}${this.post.content}`)
         const response = await fetch(`${basePath}${this.post.content}`);
         this.content = await response.text();
       } catch (error) {
