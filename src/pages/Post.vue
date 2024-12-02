@@ -13,7 +13,7 @@
           <el-divider></el-divider>
           <h3>概要</h3>
           <div class="presentation">
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRpLzqZO4FXP1EvlU6igtf6y0bVnW3Dk2dUOG37U8sk6f7u4kuUkUIJtP9WshxDSB_Nt0yCDYeIolDx/embed?start=false&loop=false&delayms=3000" frameborder="0"   width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          <!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRpLzqZO4FXP1EvlU6igtf6y0bVnW3Dk2dUOG37U8sk6f7u4kuUkUIJtP9WshxDSB_Nt0yCDYeIolDx/embed?start=false&loop=false&delayms=3000" frameborder="0"   width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
 
         </div>
           <el-divider></el-divider>
@@ -65,7 +65,9 @@
       // 記事本文を動的に取得
     if (this.post?.content) {
       try {
-        const response = await fetch(this.post.content);
+        // BASE_URLを取得
+        const basePath = import.meta.env.BASE_URL || '/';
+        const response = await fetch(`${basePath}${this.post.content}`);
         this.content = await response.text();
         console.log(this.content)
       } catch (error) {
