@@ -17,9 +17,5 @@
   };
   </script>
   
-  <style>
-  .mb-4 {
-    margin-bottom: 16px;
-  }
-  </style>
+
   

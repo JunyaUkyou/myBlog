@@ -69,7 +69,6 @@
         const basePath = import.meta.env.BASE_URL || '/';
         const response = await fetch(`${basePath}${this.post.content}`);
         this.content = await response.text();
-        console.log(this.content)
       } catch (error) {
         console.error("本文の読み込みに失敗しました:", error);
       }
@@ -82,48 +81,4 @@
   },
   };
   </script>
-  
-  <style scoped>
-    .presentation{
-        width: 100%;
-        max-width: 960px;
-        height:569px;
-    }
-
-  .post-card {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .dates {
-    display: flex;
-  }
-
-  .post-date {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 20px;
-  }
-  
-  .post-content {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .back-button {
-    margin-top: 20px;
-    display: block;
-  }
-  </style>
   
